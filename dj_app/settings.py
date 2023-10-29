@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-tsnh7=^kj=w1zud#ib+q_9i0g((+umc4j(8n++$a*&ijjo!(w^
 DEBUG = True
 
 # need to specify the public ip of your ec2 instance.
-ALLOWED_HOSTS = ["18.209.9.234"]
+ALLOWED_HOSTS = ["18.209.9.234", 'localhost', '127.0.0.1']
 
 
 # Application definition
@@ -38,10 +38,12 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'corsheaders',  # django-cors-headers
     'front'
 ]
 
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
