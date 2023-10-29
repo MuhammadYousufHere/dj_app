@@ -55,6 +55,12 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'dj_app.urls'
 
+CORS_ALLOWED_ORIGINS = [
+    "http://18.209.9.234:8000",
+    "http://localhost:8080",
+    "http://127.0.0.1:8000"
+]
+
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
